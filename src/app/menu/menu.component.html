@@ -7,10 +7,18 @@
       <h3>Menu</h3>
     </div>
   </div>
-
+  <mat-list fxFlex>
+    <mat-list-item *ngFor="let dish of dishes">
+      <img matListAvatar src={{dish.image}} alt={{dish.name}}>
+      <h1 matLine> {{dish.name}} </h1>
+      <p matLine>
+        <span> {{dish.description}} </span>
+      </p>
+    </mat-list-item>
+  </mat-list>
   <div fxFlex>
-      <mat-grid-list cols="2" rowHeight="200px">
-        <mat-grid-tile *ngFor="let dish of dishes" (click)="OnSelect(dish)">
+      <mat-grid-list cols="1" rowHeight="200px">
+        <mat-grid-tile *ngFor="let dish of dishes" (click)="onSelect(dish)">
           <img height="200px" src="{{dish.image}}"  alt="{{dish.name}}">
           <mat-grid-tile-footer>
             <h1 matline >{{dish.name}}</h1>
@@ -22,14 +30,6 @@
   <app-dishdetail [dish] = "selectedDish"></app-dishdetail>
 
 
-  <mat-list fxFlex>
-    <mat-list-item *ngFor="let dish of dishes">
-      <img matListAvatar src={{dish.image}} alt={{dish.name}}>
-      <h1 matLine> {{dish.name}} </h1>
-      <p matLine>
-        <span> {{dish.description}} </span>
-      </p>
-    </mat-list-item>
-  </mat-list>
+ 
 
 </div>

@@ -1,16 +1,25 @@
 <!-- <p>
   dishdetail works!
 </p> -->
-<div fxFlex *ngIf="selectedDish">
+
+
+<div class="container"
+fxLayout="row"
+fxLayout.sm="column"
+fxLayout.xs="column"
+fxLayoutAlign.gt-md="space-around center"
+fxLayoutGap="10px" 
+fxLayoutGap.xs="0">
+<div fxFlex *ngIf="dish" >
     <mat-card>
       <mat-card-header>
         <mat-card-title>
-          <h3>{{selectedDish.name |uppercase}}</h3>
+          <h3>{{dish.name |uppercase}}</h3>
         </mat-card-title>
       </mat-card-header>
-      <img mat-card-image src={{selectedDish.image}} alt={{selectedDish.name}}/>
+      <img mat-card-image src={{dish.image}} alt={{dish.name}}/>
       <mat-card-content>
-        <p>{{selectedDish.description}}</p>
+        <p>{{dish.description}}</p>
       </mat-card-content>
       <mat-card-actions>
         <button mat-button>LIKE</button>
@@ -20,3 +29,5 @@
     </mat-card>
 
   </div>
+
+</div>
