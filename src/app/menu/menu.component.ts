@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Dish} from '../shared/dish';
-import {DISHES} from '../shared/dish';
 
-import {DishComment} from '../shared/comment';
-import {COMMENTS} from '../shared/comment';
+import { Dish } from '../shared/dish';
 
 @Component({
   selector: 'app-menu',
@@ -12,15 +9,13 @@ import {COMMENTS} from '../shared/comment';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  dishes: Dish[] = DISHES;
-  comments: DishComment[] = COMMENTS;
-
-  selectedDish: Dish = DISHES[0];
-
-
+  selectedDish: Dish;
   constructor() { }
 
   ngOnInit() {
+  }
+  onSelect(dish: Dish) {
+    this.selectedDish = dish;
   }
 
 }
